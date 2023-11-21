@@ -9,11 +9,11 @@ int main()
 {
   // Load the datasets.
   arma::mat dataset;
-  if (!data::Load("covertype-small.data.csv", dataset))
-    throw std::runtime_error("Could not read covertype-small.data.csv!");
+  if (!data::Load("../data/values.csv", dataset))
+    throw std::runtime_error("Could not read values.csv!");
   arma::Row<std::size_t> labels;
-  if (!data::Load("covertype-small.labels.csv", labels))
-    throw std::runtime_error("Could not read covertype-small.labels.csv!");
+  if (!data::Load("../data/labels.csv", labels))
+    throw std::runtime_error("Could not read labels.csv!");
   
   // Labels are 1-7, but we want 0-6 (we are 0-indexed in C++).
   labels -= 1;
